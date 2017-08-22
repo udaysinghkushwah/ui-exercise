@@ -1,0 +1,95 @@
+table,
+th,
+td {
+  border-collapse: collapse;
+}
+
+.table-responsive {
+  width: 100%;
+}
+
+tbody>tr {
+  border-bottom: 1px solid #ebeff2;
+}
+
+thead {
+  background-color: #ebeff2;
+  color: #80868a;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 10px 15px;
+}
+
+td>a {
+  text-decoration: none;
+  color: blue;
+}
+
+#header {
+  height: 64px;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  width: 100%;
+}
+
+#header h1#logo {
+  float: left;
+  margin: 0;
+}
+
+#header h1#logo a {
+  background: url(../images/logo.png) no-repeat top left;
+  width: 194px;
+  height: 48px;
+  margin: 8px;
+  display: block;
+  text-indent: -9999px;
+}
+
+#header .color {
+  display: block;
+  height: 4px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+#container {
+  padding: 100px 20px 20px 20px;
+}
+
+.color {
+  background-color: rgba(195, 30, 30, 0.9) !important;
+}
+
+.filter-dimension {
+  display: block;
+  float: right;
+  margin-bottom: 15px;
+}
+
+select {
+  font-size: 15px;
+}
+
+.form-control {
+  font-size: 15px;
+}
+
+.h3-align {
+  float: left;
+  width: 140px;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width:320px) and (max-width:480px) {
+  .table-responsive {
+    min-width: 450px;
+    overflow: auto;
+  }
+}

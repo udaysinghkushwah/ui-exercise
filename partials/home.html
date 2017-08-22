@@ -1,0 +1,58 @@
+<div style="width:100%;">
+        <h1 class="header">Real Estate Auction Calendar</h1>
+        <div class="filter-dimension">
+          <div style="width:317px; float: left;">
+            <h3 class="h3-align">Auction Dates</h3>
+            <div style="float:left; width:150px;">
+              <datepicker date-format="MM-dd-yyyy" selector="form-control">
+                <div class="input-group">
+                  <input class="form-control" placeholder="MM-DD-YYYY" ng-model="auctiondate"/>
+                  <span class="input-group-addon" style="cursor: pointer">
+                    <i class="fa fa-lg fa-calendar"></i>
+                  </span>
+                </div>
+              </datepicker>
+            </div>
+          </div>
+          <select style="width:202px;" ng-model="propertyState">
+            <option value="" disabled selected>
+              <b>Select State</b>
+            </option>
+            <option ng-repeat="(key, value) in filterDimension.propertyState" value="{{value}}">{{value}}</option>
+          </select>
+          <select style="width:202px;" ng-model="assestType">
+            <option value="" disabled selected>
+              <b>Asset Type </b>
+            </option>
+            <option ng-repeat="(key, value) in filterDimension.assetType" value="{{value}}">{{value}}</option>
+          </select>
+          <select style="width:202px;" ng-model="venueType">
+            <option value="" disabled selected>
+              <b>Venue Type</b>
+            </option>
+            <option ng-repeat="(key, value) in filterDimension.venueType" value="{{value}}">{{value}}</option>
+          </select>
+        </div>
+        <table class="table-responsive">
+          <thead>
+            <tr>
+              <th width="20%"> Dates-Type</th>
+              <th width="55%"> Event Name </th>
+              <th width="25%"> Asset Type - Total Assets</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="data in realEstateData | filter : {auction_start_date:(auctiondate|myDateFormat),property_state: propertyState,asset_label:assestType,event_type:venueType}">
+              <td>
+                <b>{{data.auction_start_date|formatDate}} </b>
+                <br/> {{data.event_type}}
+                      
+              </td>
+              <td>
+                <a href="">{{data.auction_title}}</a>
+              </td>
+              <td>{{data.asset_label}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

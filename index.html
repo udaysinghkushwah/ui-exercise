@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="uiApp">
+  <head>
+    <title>UI -Exercise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/ui-exercise.css">
+        <link href="css/angular-datepicker.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Suranna" rel="stylesheet">
+        </head>
+        <body>
+          <!-- top -->
+          <header id="header">
+            <h1 id="logo">
+              <a ui-sref="home"></a>
+            </h1>
+            <div class="color"></div>
+            <div class="clear"></div>
+          </header>
+          <!-- //top -->
+          <div class="shadow"></div>
+          <div id="container">
+            <ui-view></ui-view>
+          </div>
+          <script src="lib/angular.js"></script>
+          <script src="lib/angular-ui-router.js"></script>
+          <script src="lib/angular-datepicker.js"></script>
+          <script type="text/javascript" src="js/app.js"></script>
+        </body>
+      </html>
